@@ -2,7 +2,7 @@
 
 This repository contains the code and resources for the Investigating Sentiment Patterns in Amazon Reviews project, which focuses on analyzing users' sentiments towards different forms of entertainment based on Amazon reviews. The dataset used for this project is the Amazon Top 50 Movies, Books, and Games Reviews.
 
-### **Partner(s)/Contributor(s)**
+### **Contributors**
 
 Authors: Ivan Chavez, Lane Whitmore, Uyen Pham
 
