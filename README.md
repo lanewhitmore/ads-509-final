@@ -8,7 +8,7 @@ Authors: Ivan Chavez, Lane Whitmore, Uyen Pham
 
 ### **Project Objectives**
 
-1. Collect Amazon review data for the top 50 movies, books, and games in the entertainment industry by implementing web scraping techniques such as the Selenium Framework to gather review data.
+1. Collect Amazon review data for the top 50 movies, books, and games by implementing web scraping techniques such as the Selenium Framework.
 2. Analyze the collected review data to understand users' sentiments.
 3. Apply Natural Language Processing (NLP) techniques such as stop word removal and tokenization for data processing.
 4. Train and evaluate sentiment classification models based on the review star ratings.
