@@ -17,8 +17,8 @@ app = FastAPI()
 class TextInput(BaseModel):
     text: str
 
-@app.post("/predict")
-def predict(input_data: TextInput):
+@app.post("/classifier")
+def classify_text(input_data: TextInput):
     text = [input_data.text]
     text_tfidf = tfidf.transform(text)
 
