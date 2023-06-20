@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Topic Modeling</title>
+<style>
+h1 {
+  font-size: 70px;
+  font-weight: 600;
+  background-image: linear-gradient(to left, #34407a, #d28a54);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-align: center;
+}
+
+body {
+  background-color: rgb(234, 233, 232);
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+table {
+    width: 100%
+}
+td {
+  text-align: center;
+}
+th {
+    font-size: 20;
+}
+caption {
+        background: #285ab6;
+        color: #fff;
+        caption-side: top;
+        font-size: 25px;
+      }
+.input-element{
+font-size: 100px;
+width: 400px;
+}
+label {
+    font-size: 20px;
+}
+p {
+    font-size: 17px;
+}
+
+</style>
+</head>
+<body>
+<h1>Topic Modeling Amazon Reviews</h1>
+
+<p>Details For Use:</p>
+
+<p>
+This LDA model should be used to assess greater than 10 reviews of a media product such as a book, a movie, or a video game. 
+Doing so will offer two different Topic groups found by the model that will likely offer positive sentiment in one topic and negative sentiment in the other topic.
+In the event that there is either no positive nor negative reviews included within the text presented to the model, the model may struggle to separate the data in that way, instead electing to separate the two groups in a different way.
+</p>
+
+<label for="reviews">Enter Reviews Here:</label><br>
+<form method="post">
+    <input type="text" name="reviews" size="200" height="50"/>
+    <input type="submit">
+</form>
+
+<p>Topic 0: {{ Topic0 }}</p><br>
+<p>Topic 1: {{ Topic1 }}</p>
+
+<table>
+    <caption>Topic 0 Words and Relevance</caption><br>
+    <tr>
+        <th>Word</th>
+        <th>Relevance</th>
+    </tr>
+    <tr>
+        <td>{{ Topic0[0][0] }}</td>
+        <td>{{ Topic0[0][1] }}</td>
+    </tr>
+    <tr>
+        <td>{{ Topic0[1][0] }}</td>
+        <td>{{ Topic0[1][1] }}</td>
+    </tr>
+    <tr>
+        <td>{{ Topic0[2][0] }}</td>
+        <td>{{ Topic0[2][1] }}</td>
+    </tr>
+    <tr>
+        <td>{{ Topic0[3][0] }}</td>
+        <td>{{ Topic0[3][1] }}</td>
+    </tr>
+    <tr>
+        <td>{{ Topic0[4][0] }}</td>
+        <td>{{ Topic0[4][1] }}</td>
+    </tr>
+    <tr>
+        <td>{{Topic0[5][0]}}</td>
+        <td>{{Topic0[5][1]}}</td>
+    </tr>
+    <tr>
+        <td>{{Topic0[6][0]}}</td>
+        <td>{{Topic0[6][1]}}</td>
+    </tr>
+    <tr>
+        <td>{{Topic0[7][0]}}</td>
+        <td>{{Topic0[7][1]}}</td>
+    </tr>
+    <tr>
+        <td>{{Topic0[8][0]}}</td>
+        <td>{{Topic0[8][1]}}</td>
+    </tr>
+    <tr>
+        <td>{{Topic0[9][0]}}</td>
+        <td>{{Topic0[9][1]}}</td>
+    </tr>
+</table><br>
+
+<table>
+    <caption>Topic 1 Words and Relevance</caption><br>
+    <tr>
+        <th>Words</th>
+        <th>Relevance</th>
+    </tr>
+    <tr>
+        <td>{{Topic1[0][0]}}</td>
+        <td>{{Topic1[0][1]}}</td>
+    </tr>
+    <tr>
+        <td>{{Topic1[1][0]}}</td>
+        <td>{{Topic1[1][1]}}</td>
+    </tr>
+    <tr>
+        <td>{{Topic1[2][0]}}</td>
+        <td>{{Topic1[2][1]}}</td>
+    </tr>
+    <tr>
+        <td>{{Topic1[3][0]}}</td>
+        <td>{{Topic1[3][1]}}</td>
+    </tr>
+    <tr>
+        <td>{{Topic1[4][0]}}</td>
+        <td>{{Topic1[4][1]}}</td>
+    </tr>
+    <tr>
+        <td>{{Topic1[5][0]}}</td>
+        <td>{{Topic1[5][1]}}</td>
+    </tr>
+    <tr>
+        <td>{{Topic1[6][0]}}</td>
+        <td>{{Topic1[6][1]}}</td>
+    </tr>
+    <tr>
+        <td>{{Topic1[7][0]}}</td>
+        <td>{{Topic1[7][1]}}</td>
+    </tr>
+    <tr>
+        <td>{{Topic1[8][0]}}</td>
+        <td>{{Topic1[8][1]}}</td>
+    </tr>
+    <tr>
+        <td>{{Topic1[9][0]}}</td>
+        <td>{{Topic1[9][1]}}</td>
+    </tr>
+</table>
+
+</body>
+</html>
+
