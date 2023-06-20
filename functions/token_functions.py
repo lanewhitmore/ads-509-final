@@ -102,3 +102,14 @@ def sentiment_stats(x_train, x_test, y_train, y_test):
     print('Distribution of classes in Testing Data :')
     print('Positive Sentiment ', str(sum(y_test == 1) / len(y_test) * 100.0))
     print('Negative Sentiment ', str(sum(y_test == 0) / len(y_test) * 100.0))
+
+
+def get_tokens(text, tokenizer, max_seq_length, add_special_tokens=True):
+    input_ids = tokenizer.encode(text,
+                                 add_special_tokens=add_special_tokens,
+                                 max_length=max_seq_length,
+                                 pad_to_max_length=True)
+    attention_mask = [int(id > 0) for id in input_ids]
+    assert len(input_ids) == max_seq_length
+    assert len(attention_mask) == max_seq_length
+    return input_ids, attention_mask
