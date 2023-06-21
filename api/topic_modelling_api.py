@@ -3,11 +3,10 @@ from fastapi import FastAPI, Request, Form
 from fastapi.templating import Jinja2Templates
 from sklearn.decomposition import LatentDirichletAllocation
 
+
 # Load fitted count vectorizer
 with open('C:/Users/whitm/Documents/GitHub/ads-509-final/models/count_vect.pkl', 'rb') as file:
     count = pickle.load(file)
-#with open('C:/Users/whitm/Documents/GitHub/ads-509-final/models/lda_model.pkl', 'rb') as file:
-    #lda_text_model = pickle.load(file)
 lda_text_model = LatentDirichletAllocation(n_components=2, random_state=33)
 
 app = FastAPI()
@@ -36,7 +35,6 @@ def topic(request: Request, reviews: str = Form(...)):
         print("\nTopic %02d" % topic)
         for i in range(0, 10):
             d[topic].append((count.get_feature_names_out()[largest[i]], round(abs(words[largest[i]]*100.0/total), 2)))
-    #lda_display = pyLDAvis.lda_model.prepare(lda_text_model, text_count, count, sort_topics=False) 
     return templates.TemplateResponse('index.html', context={'request': request, 'Topic0': d[0], 'Topic1': d[1]})
 
 
