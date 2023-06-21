@@ -1,79 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>Topic Modeling</title>
-<style>
-h1 {
-  font-size: 70px;
-  font-weight: 600;
-  background-image: linear-gradient(to left, #34407a, #d28a54);
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  text-align: center;
-}
+    <title>Topic Modeling Test</title>
+    <link rel="stylesheet" href="styles.css">
 
-body {
-  background-color: rgb(234, 233, 232);
-}
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-
-th, td {
-  padding-top: 10px;
-  padding-bottom: 20px;
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-table {
-    width: 100%
-}
-td {
-  text-align: center;
-}
-th {
-    font-size: 20;
-}
-caption {
-        background: #285ab6;
-        color: #fff;
-        caption-side: top;
-        font-size: 25px;
-      }
-.input-element{
-font-size: 100px;
-width: 400px;
-}
-label {
-    font-size: 20px;
-}
-p {
-    font-size: 17px;
-}
-
-</style>
 </head>
 <body>
-<h1>Topic Modeling Amazon Reviews</h1>
+<h1 class="title_container">Topic Modeling Amazon Reviews</h1>
 
-<p>Details For Use:</p>
-
-<p>
-This LDA model should be used to assess greater than 10 reviews of a media product such as a book, a movie, or a video game. 
-Doing so will offer two different Topic groups found by the model that will likely offer positive sentiment in one topic and negative sentiment in the other topic.
-In the event that there is either no positive nor negative reviews included within the text presented to the model, the model may struggle to separate the data in that way, instead electing to separate the two groups in a different way.
+<p class="description_container">Details For Use: <br><br>This LDA model should be used to assess greater than 10 reviews of a media product such as a book, a movie, or a video game.Doing so will offer two different Topic groups found by the model that will likely offer positive sentiment in one topic and negative sentiment in the other topic.
 </p>
 
-<label for="reviews">Enter Reviews Here:</label><br>
-<form method="post">
-    <input type="text" name="reviews" size="200" height="50"/>
-    <input type="submit">
-</form>
+<p class="notice_container"> NOTE: In the event that there is either no positive nor negative reviews included within the text presented to the model, the model may struggle to separate the data in that way, instead electing to separate the two groups in a different way.</p>
 
+
+<form method="post">
+    <div class="input-row">
+    <input type="text" placeholder="Enter your text">
+    </div>
+    <div class="submit-button">
+        <button type="submit">Submit</button>
+    </div>
+</form>
 
 <table>
     <caption>Topic 0 Words and Relevance</caption><br>

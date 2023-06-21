@@ -1,0 +1,143 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0 1rem 0 1rem;
+    color: #adb5bd;
+    font-family: 'Roboto Light', sans-serif;
+}
+html {
+    height: auto;
+    min-width: auto;
+    background: #212529;
+    background-size: auto;
+}
+
+
+.title_container{
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+    padding: 1rem;
+}
+
+
+.description_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem;
+
+}
+
+.label_container{
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+    padding: 0rem 1rem;
+}
+
+.notice_container{
+    color: lightcoral;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-left: 1rem;
+    padding-bottom: 0.5rem;
+    font-weight: bold;
+    font-style: italic;
+}
+.input-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+input[type='text']{
+    display: flex;
+    height: 3rem;
+    width: 85%;
+    font-size: 1rem;
+    border-radius: 10px;
+    padding-left: .5rem;
+    color: black;
+}
+
+button[type='submit']{
+    display: flex;
+    justify-content: center;
+    height: 1.8rem;
+    width: 10%;
+    font-size: .9rem;
+    padding-top: 7px;
+    border-radius: 10px;
+    border: white;
+    color: black;
+    font-weight: bold;
+    background-color: white;
+}
+
+.submit-button {
+    display: flex;
+    justify-content: flex-end;
+    margin-right:7%;
+    margin-top: 5px;
+}
+
+button:hover {
+
+    color: cadetblue;
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 600;
+    background: #FFFFFF;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-align: left;
+}
+
+caption {
+    background: cadetblue;
+    color: #fff;
+    caption-side: top;
+    font-size: 25px;
+}
+
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
+}
+p {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px 40px 20px 30px;
+}
+
+table {
+    width: 100%
+}
+
+td {
+    text-align: center;
+}
+th {
+    font-size: 20px;
+}
+
+
+
