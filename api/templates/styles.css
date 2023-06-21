@@ -54,14 +54,14 @@ html {
     margin-top: 10px;
 }
 
-input[type='text']{
+.textarea-container{
     display: flex;
-    height: 3rem;
-    width: 85%;
+    height: 5rem;
+    width: 100%;
     font-size: 1rem;
     border-radius: 10px;
-    padding-left: .5rem;
     color: black;
+    padding-left: 5px;
 }
 
 button[type='submit']{
@@ -81,7 +81,7 @@ button[type='submit']{
 .submit-button {
     display: flex;
     justify-content: flex-end;
-    margin-right:7%;
+    margin-right:0;
     margin-top: 5px;
 }
 
