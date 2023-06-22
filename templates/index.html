@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
+<script>
+    // Clear input on refresh
+    window.onload = function() {
+        document.getElementById("reviewTextarea").value = "";
+    };
+</script>
+
 <head>
     <meta charset="UTF-8">
     <title>Topic Modeling Test</title>
@@ -16,9 +23,14 @@
 
 <form method="post" action="/reviews">
     <div class="input-row">
-        <textarea class="textarea-container" type="text" name="reviews">Enter Text Here...
+        <textarea id="reviewTextarea" name="reviews" placeholder="Review 1
+---
+Review 2
+---
+Review n">
         </textarea>
     </div>
+
     <div class="submit-button">
         <button type="submit">Submit</button>
     </div>
