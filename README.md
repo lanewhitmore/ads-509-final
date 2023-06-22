@@ -29,7 +29,7 @@ Please refer to the documentation and code in this repository for more detailed 
 
 2. Open a command line interface and navigate to the directory the cloned repository.
 
-3. Ensure that all dependencies are installed. 
+3. Ensure that all dependencies are installed. If not use `pip install -r requirements.txt`
 
 4. Run the following command to start the local server: `uvicorn main:app --reload`
 5. Once the server is running, open your web browser and enter the following URL: http://127.0.0.1:8000
