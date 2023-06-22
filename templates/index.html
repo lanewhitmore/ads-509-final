@@ -24,38 +24,43 @@
     </div>
 </form>
 
+<div class="Topics_container">
+    <div class="Topic0_container">
+        {% if Topic0 %}
+        <h2>Topic Bad</h2>
+        <ul>
+            {% for word, relevance in Topic0 %}
+            <li>{{ word }} - {{ relevance }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+
+    <div class="Topic1_container">
+        {% if Topic1 %}
+        <h2>Topic Good</h2>
+        <ul>
+            {% for word, relevance in Topic1 %}
+            <li>{{ word }} - {{ relevance }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</div>
+
 <div class="classify_container">
+    {% if Topic0 %}
+    <h2>Review Sentiments</h2>
     <ul>
         {% for review, sentiment in review_sentiments %}
         <li class="review-item">
             <div class="review_container">
-            <strong>Review:</strong> {{ review }}
+                <strong>Review:</strong> {{ review }}
             </div>
             <div class="sentiment_container">
-            Sentiment: {{ sentiment }}
+                Sentiment: {{ sentiment }}
             </div>
         </li>
-        {% endfor %}
-    </ul>
-</div>
-
-<div>
-    {% if Topic0 %}
-    <h2>Topic 0</h2>
-    <ul>
-        {% for word, relevance in Topic0 %}
-        <li>{{ word }} - {{ relevance }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-</div>
-
-<div>
-    {% if Topic1 %}
-    <h2>Topic 1</h2>
-    <ul>
-        {% for word, relevance in Topic1 %}
-        <li>{{ word }} - {{ relevance }}</li>
         {% endfor %}
     </ul>
     {% endif %}
