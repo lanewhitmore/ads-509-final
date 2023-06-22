@@ -2,12 +2,13 @@ import pickle
 from fastapi import FastAPI, Request, Form
 from fastapi.templating import Jinja2Templates
 from sklearn.decomposition import LatentDirichletAllocation
-
+import functions.token_functions as tf
 
 # Load fitted count vectorizer
-with open('C:/Users/whitm/Documents/GitHub/ads-509-final/models/count_vect.pkl', 'rb') as file:
+with open('../models/count_vect.pkl', 'rb') as file:
     count = pickle.load(file)
-lda_text_model = LatentDirichletAllocation(n_components=2, random_state=33)
+with open('../models/lda_model.pkl', 'rb') as file:
+    lda_text_model = pickle.load(file)
 
 app = FastAPI()
 
@@ -24,10 +25,11 @@ def form_start(request: Request):
 @app.post("/topicmodel")
 def topic(request: Request, reviews: str = Form(...)):
     text = [reviews]
-    text_count = count.transform(text)
+    cleaned = text.apply(tf.clean_tokenize)
+    text_count = count.transform(cleaned)
 
     # Make prediction
-    lda_text_model.fit_transform(text_count)
+    lda_text_model.transform(text_count)
     d = {0:[], 1:[]}
     for topic, words in enumerate(lda_text_model.components_):
         total = words.sum()
