@@ -3,6 +3,7 @@ from fastapi import FastAPI, Request, Form
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from typing import List, Union
+from sklearn.decomposition import LatentDirichletAllocation
 import functions.token_functions as tf
 
 # Load fitted tfid vectorizer
@@ -16,8 +17,8 @@ with open('models/svc_model.pkl', 'rb') as file:
 # Load fitted count vectorizer
 with open('models/count_vect.pkl', 'rb') as file:
     count = pickle.load(file)
-with open('models/lda_model.pkl', 'rb') as file:
-    lda_text_model = pickle.load(file)
+lda_text_model = LatentDirichletAllocation(n_components=2, random_state=33)
+
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -59,7 +60,7 @@ async def analyze_reviews(request: Request, reviews: Union[str, List[str]] = For
     text_count = count.transform(cleaned_reviews_flat)
 
     # Make prediction
-    lda_text_model.transform(text_count)
+    lda_text_model.fit_transform(text_count)
     topic_results = {0: [], 1: []}
     for topic, words in enumerate(lda_text_model.components_):
         total = words.sum()
