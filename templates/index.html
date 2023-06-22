@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Topic Modeling Test</title>
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+<h1 class="title_container">Topic Modeling Amazon Reviews</h1>
+
+<p class="description_container">Details For Use: <br><br>This LDA model should be used to assess greater than 10 reviews of a media product such as a book, a movie, or a video game.Doing so will offer two different Topic groups found by the model that will likely offer positive sentiment in one topic and negative sentiment in the other topic.
+</p>
+
+<p class="notice_container"> NOTE: In the event that there is either no positive nor negative reviews included within the text presented to the model, the model may struggle to separate the data in that way, instead electing to separate the two groups in a different way.</p>
+
+
+<form method="post" action="/reviews">
+    <div class="input-row">
+        <textarea class="textarea-container" type="text" name="reviews">Enter Text Here...
+        </textarea>
+    </div>
+    <div class="submit-button">
+        <button type="submit">Submit</button>
+    </div>
+</form>
+
+<div class="classify_container">
+    <ul>
+        {% for review, sentiment in review_sentiments %}
+        <li class="review-item">
+            <div class="review_container">
+            <strong>Review:</strong> {{ review }}
+            </div>
+            <div class="sentiment_container">
+            Sentiment: {{ sentiment }}
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div>
+    {% if Topic0 %}
+    <h2>Topic 0</h2>
+    <ul>
+        {% for word, relevance in Topic0 %}
+        <li>{{ word }} - {{ relevance }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</div>
+
+<div>
+    {% if Topic1 %}
+    <h2>Topic 1</h2>
+    <ul>
+        {% for word, relevance in Topic1 %}
+        <li>{{ word }} - {{ relevance }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</div>
+
+</body>
+</html>
+

@@ -47,6 +47,26 @@ html {
     font-weight: bold;
     font-style: italic;
 }
+
+.review_container{
+    display: flex;
+    justify-content: left;
+    padding-bottom: 5px;
+}
+
+.sentiment_container{
+    display: flex;
+    justify-content: left;
+    padding-top:5px
+    font-weight: bold;
+    font-style: italic;
+
+}
+
+.review-item{
+    padding: 7px;
+}
+
 .input-row {
     display: flex;
     justify-content: center;
