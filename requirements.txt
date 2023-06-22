@@ -1,0 +1,10 @@
+chromedriver_py==114.0.5735.90
+fastapi==0.98.0
+langdetect==1.0.9
+lexical_diversity==0.1.1
+nltk==3.8.1
+pandas==2.0.2
+pickle==4.0
+selenium==4.10.0
+sklearn==1.2.2
+typing==3.10.0.0
