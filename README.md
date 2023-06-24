@@ -6,7 +6,7 @@ This repository contains the code and resources for the Investigating Sentiment 
 
 Authors: Ivan Chavez, Lane Whitmore, Uyen Pham
 
-### **Project Objectives**
+### **Project Structure**
 
 1. Collect Amazon review data for the top 50 movies, books, and games by implementing web scraping techniques such as the Selenium Framework. See ***web-scraper*** folder.
 2. Analyze the collected review data to understand users' sentiments.
