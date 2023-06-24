@@ -71,71 +71,24 @@ html {
     font-style: italic;
 }
 
-.review_container{
-    display: flex;
-    justify-content: left;
-    padding-bottom: 5px;
-}
-
-.classify_container{
-    padding-bottom: 1rem;
-}
-
-.sentiment_container{
-    display: flex;
-    justify-content: left;
-    padding-top:5px;
-    font-weight: bold;
-    font-style: italic;
-
-}
-
-.review-item{
-    padding: 7px;
-}
-
-.input-row {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
-
-textarea {
-    color: black;
-    font-size: 10px;
-    padding: 8px;
-    resize: vertical;
-    height: 5rem;
-    width: 100%;
-    font-size: 1rem;
-    border-radius: 10px;
-    outline: none;
-    min-height: 150px;
-    max-height: 400px;
-}
-
-textarea::placeholder {
-  color: #212529;
-}
-
-textarea:focus::placeholder {
-  color: transparent;
-}
-
-.textarea-container {
-    display: flex;
-    height: 5rem;
-    width: 100%;
-    font-size: 1rem;
-    border-radius: 10px;
-    padding-left: 5px;
-}
-
 
 .flex-child {
     flex: 1;
     border: 2px solid yellow;
+}
+
+.Topics_container{
+    display:flex
+}
+
+.Topic0_container{
+    flex:1;
+    padding-bottom: 1rem;
+}
+
+.Topic1_container{
+    flex:1;
+    padding-bottom: 1rem;
 }
 
 button[type='submit']{

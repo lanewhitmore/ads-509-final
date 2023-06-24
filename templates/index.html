@@ -13,10 +13,14 @@
     <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
 </head>
 <body>
-<h1 class="title_container">Review Analyzer: Unveiling Sentiments and Topics</h1>
+<div class="topnav">
+    <a class="active" href="http://127.0.0.1:8000/">Review Analyzer</a>
+    <a href="http://127.0.0.1:8000/topicmodel">Topic Model</a>
+</div>
+<h1 class="title_container">Review Analyzer: Unveiling Sentiments</h1>
 
 <h2>Details For Use:</h2>
-<p class="description_container">The application analyzes the sentiment of each review, providing insights into its positive or negative nature. Users can gain valuable insights about the reviewed media product by understanding the overall sentiment associated with the reviews. Additionally, the application incorporates topic modeling, enabling users to explore two distinct topics within the reviews and delve deeper into the themes and discussions. It is important to ensure that there are at least 10 reviews for sufficient topic analysis.
+<p class="description_container">The application analyzes the sentiment of each review, providing insights into its positive or negative nature. Users can gain valuable insights about the reviewed media product by understanding the overall sentiment associated with the reviews. 
 </p>
 
 
@@ -36,7 +40,7 @@ Review n">
 </form>
 
 <div class="classify_container">
-    {% if Topic0 %}
+    {% if review_sentiments %}
     <h2>Review Sentiments</h2>
     <ul>
         {% for review, sentiment in review_sentiments %}
@@ -52,33 +56,6 @@ Review n">
     </ul>
     {% endif %}
 </div>
-
-<div class="Topics_container">
-    <div class="Topic0_container">
-        {% if Topic0 %}
-        <h2>Topic 1</h2>
-        <ul>
-            {% for word, relevance in Topic0 %}
-            <li>{{ word }} - {{ relevance }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-    </div>
-
-    <div class="Topic1_container">
-        {% if Topic1 %}
-        <h2>Topic 2</h2>
-        <ul>
-            {% for word, relevance in Topic1 %}
-            <li>{{ word }} - {{ relevance }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-    </div>
-</div>
-
-
-
 </body>
 </html>
 

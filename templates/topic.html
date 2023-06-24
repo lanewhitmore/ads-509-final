@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Amazon Review Sentiment Topic Modeling</title>
+    <link href="{{ url_for('static', path='/topstyles.css') }}" rel="stylesheet">
+</head>
+<div class="topnav">
+    <a href="http://127.0.0.1:8000/">Review Analyzer</a>
+    <a class="active" href="http://127.0.0.1:8000/topicmodel">Topic Modeling</a>
+</div>
+<body>
+    <h1 class="title_container">Amazon Review Sentiment Topic Modeling</h1>
+    
+    <h2>NMF Topic Modeling Interpretation:</h2>
+    <p class="description_container">For two class topic modeling, a non-negative matrix factorization model (NMF) has been implemented as it had the least class overlap when compared to Latent Dirichlet Allocation (LDA) or Singular Value Decomposition (SVD). The NMF separated out the topics by two of the three media types: Movies and Books. This is likely due to the sheer amount of reviews, particularly positive ones, for Movies and Books in comparison to Video Games. While this is not the same goal as our sentiment modeling, it does describe some interesting differences among these two media types worth investigating. 
+    </p> 
+    <p class="description_container">For instance, Topic 1 is the 'book' topic that contains words one would come to expect including; book, read, story, reading, and books. While Topic 2 the 'movie' topic contains; movie, watch, watching, and acting. Again these are the words one would expect in these two groupings. Taking a closer look at some unique works in Topic 1 love and story seem to stand out. Many of the most read books are romance novels that are completely about the love story between characters, the prominence of these two words could be pointing out that relationship. For Topic 2, family, kids, funny, action, fun, and cute seem to stand out. As movie watching is more of a group activity than reading, one would expect more of a family theme with the ease of access to watching a movie. That is why family, kids, and cute appear so prominently in this topic. Another huge genre for movies is the action genre that does make an appearance that seems to be linked to fun as action movies are often a more shallow narrative experience with fun visuals and characters. These two topics do an excellent job at expresses the differences in the reviews of books and movies on Amazon by highlighting those differences in positive reviews. 
+    </p>
+    
+    <div class="Topics_container">
+        <div class="Topic0_container">
+            {% if Topic0 %}
+            <h2>Topic 1</h2>
+            <ul>
+                {% for word, relevance in Topic0 %}
+                <li>{{ word }} - {{ relevance }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    
+        <div class="Topic1_container">
+            {% if Topic1 %}
+            <h2>Topic 2</h2>
+            <ul>
+                {% for word, relevance in Topic1 %}
+                <li>{{ word }} - {{ relevance }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+    
+    
+    
+    </body>
+    </html>

@@ -3,7 +3,6 @@ from fastapi import FastAPI, Request, Form
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from typing import List, Union
-from sklearn.decomposition import LatentDirichletAllocation
 import functions.token_functions as tf
 
 # Load fitted tfid vectorizer
@@ -17,7 +16,10 @@ with open('models/svc_model.pkl', 'rb') as file:
 # Load fitted count vectorizer
 with open('models/count_vect.pkl', 'rb') as file:
     count = pickle.load(file)
-lda_text_model = LatentDirichletAllocation(n_components=2, random_state=33)
+
+# load fitted nmf model
+with open('models/nmf_model.pkl', 'rb') as file:
+    nmf_text_model = pickle.load(file)
 
 
 app = FastAPI()
@@ -55,29 +57,26 @@ async def analyze_reviews(request: Request, reviews: Union[str, List[str]] = For
     for review in review_list:
         cleaned_review = tf.clean_tokenize(review)
         cleaned_reviews.append(cleaned_review)
+    return templates.TemplateResponse(
+        'index.html', {
+            'request': request,
+            'review_sentiments': review_sentiments})
 
-    cleaned_reviews_flat = [item for sublist in cleaned_reviews for item in sublist]
-    text_count = count.transform(cleaned_reviews_flat)
-
-    # Make prediction
-    lda_text_model.fit_transform(text_count)
+@app.get("/topicmodel")
+async def reviews_form(request: Request):
     topic_results = {0: [], 1: []}
-    for topic, words in enumerate(lda_text_model.components_):
+    for topic, words in enumerate(nmf_text_model.components_):
         total = words.sum()
         largest = words.argsort()[::-1]  # invert sort order
         print("\nTopic %02d" % topic)
-        for i in range(0, 10):
+        for i in range(0, 15):
             topic_results[topic].append(
                 (count.get_feature_names_out()[largest[i]], round(abs(words[largest[i]] * 100.0 / total), 2)))
-
-    return templates.TemplateResponse(
-        'index.html',
-        context={
-            'request': request,
-            'review_sentiments': review_sentiments,
-            'Topic0': topic_results[0],
-            'Topic1': topic_results[1]
-        })
+    return templates.TemplateResponse("topic.html", {
+        "request": request,
+        'Topic0': topic_results[0],
+        'Topic1': topic_results[1]
+    })
 
 
 def classify_text(review_text):
