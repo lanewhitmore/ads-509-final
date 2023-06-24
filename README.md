@@ -24,7 +24,7 @@ The review count for each product ranges from 14 to 8,000 reviews.
 
 ## **API Instructions**
 
-See ***static*** for the styles and formatting of a web page and ***template*** for html set up. Sample in ***testing_data*** can be used to test the app.
+See ***static*** for the styles and formatting of a web page and ***template*** for html set up. Samples in ***testing_data*** can be used to test the app.
 
 ### **Follow these instructions to set up and run the API:**
 
