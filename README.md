@@ -8,26 +8,29 @@ Authors: Ivan Chavez, Lane Whitmore, Uyen Pham
 
 ### **Project Objectives**
 
-1. Collect Amazon review data for the top 50 movies, books, and games by implementing web scraping techniques such as the Selenium Framework.
+1. Collect Amazon review data for the top 50 movies, books, and games by implementing web scraping techniques such as the Selenium Framework. See *web-scraper* folder.
 2. Analyze the collected review data to understand users' sentiments.
 3. Apply Natural Language Processing (NLP) techniques such as stop word removal and tokenization for data processing.
 4. Train and evaluate sentiment classification models based on the review star ratings.
-5. Implement the sentiment classification model into an application API for real-time sentiment analysis.
-
+5. Perform topic modeling on the review data to identify the main topics using Latent Dirichlet Allocation (LDA) and Non-Negative Matrix Factorization (NMF) techniques.
+6. Implement the sentiment classification model and topic modeling into an application API for real-time sentiment analysis.
+   The code for steps 2 to 6 can be found in the *notebooks* folder, while all the necessary functions are stored in the *function* folder. The trained models are pickled and stored in the *models* folder.
+   
 ### **Dataset Description**
 
 The dataset consists of individual CSV files for each product, containing the following information: review username, product title, review title, review body, rating (1-5 whole numbers only), and the date and place the product was reviewed from.
 
 The review count for each product ranges from 14 to 8,000 reviews.
 
-Please refer to the documentation and code in this repository for more detailed information on data preprocessing, sentiment analysis, and model implementation.
 ## **API Instructions**
+
+Prefer to *static* for the styles and formatting of a web page and *template* for html set up. Sample in *testing_data can be used to test the app.
 
 ### **Follow these instructions to set up and run the API:**
 
 1. Clone the repository to your local machine.
 
-2. Open a command line interface and navigate to the directory the cloned repository.
+2. Open a command line interface and navigate to the directory of the cloned repository.
 
 3. Ensure that all dependencies are installed. If not use `pip install -r requirements.txt`
 
@@ -43,11 +46,10 @@ Please refer to the documentation and code in this repository for more detailed 
           ---
           Review n
           </pre>
-     Ensure that there are at least 10 reviews for accurate analysis.
      Click the "Submit" button to initiate the analysis.
    
      The API will process the reviews and provide the following results:
      - Sentiment analysis: Each review will be classified as "good" or "bad" based on sentiment.
-     - Important words: The API will display the words that contribute to the sentiment classification.
+     
      - Review themes: The API will provide insights into the underlying themes discovered through topic modeling.
      
