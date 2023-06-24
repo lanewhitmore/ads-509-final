@@ -15,7 +15,7 @@ Authors: Ivan Chavez, Lane Whitmore, Uyen Pham
 5. Perform topic modeling on the review data to identify the main topics using Latent Dirichlet Allocation (LDA) and Non-Negative Matrix Factorization (NMF) techniques.
 6. Implement the sentiment classification model and topic modeling into an application API for real-time sentiment analysis.
    
-   The code for steps 2 to 6 can be found in the ***notebooks*** folder, while all the necessary functions are stored in the ***function*** folder. The trained models are pickled and stored in the ***models*** folder.
+   The code for steps 2 to 6 can be found in the ***notebooks*** folder, while all the necessary functions are stored in the ***functions*** folder. The trained models are pickled and stored in the ***models*** folder.
    
 ### **Dataset Description**
 
