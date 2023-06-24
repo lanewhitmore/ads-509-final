@@ -8,13 +8,13 @@ Authors: Ivan Chavez, Lane Whitmore, Uyen Pham
 
 ### **Project Objectives**
 
-1. Collect Amazon review data for the top 50 movies, books, and games by implementing web scraping techniques such as the Selenium Framework. See *web-scraper* folder.
+1. Collect Amazon review data for the top 50 movies, books, and games by implementing web scraping techniques such as the Selenium Framework. See ***web-scraper*** folder.
 2. Analyze the collected review data to understand users' sentiments.
 3. Apply Natural Language Processing (NLP) techniques such as stop word removal and tokenization for data processing.
 4. Train and evaluate sentiment classification models based on the review star ratings.
 5. Perform topic modeling on the review data to identify the main topics using Latent Dirichlet Allocation (LDA) and Non-Negative Matrix Factorization (NMF) techniques.
 6. Implement the sentiment classification model and topic modeling into an application API for real-time sentiment analysis.
-   The code for steps 2 to 6 can be found in the *notebooks* folder, while all the necessary functions are stored in the *function* folder. The trained models are pickled and stored in the *models* folder.
+   The code for steps 2 to 6 can be found in the ***notebooks*** folder, while all the necessary functions are stored in the ***function*** folder. The trained models are pickled and stored in the ***models*** folder.
    
 ### **Dataset Description**
 
@@ -24,7 +24,7 @@ The review count for each product ranges from 14 to 8,000 reviews.
 
 ## **API Instructions**
 
-See *static* for the styles and formatting of a web page and *template* for html set up. Sample in *testing_data can be used to test the app.
+See ***static*** for the styles and formatting of a web page and ***template*** for html set up. Sample in ***testing_data*** can be used to test the app.
 
 ### **Follow these instructions to set up and run the API:**
 
